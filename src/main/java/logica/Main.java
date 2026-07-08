@@ -1,6 +1,6 @@
-package main.practica3progra;
+package logica;
 
-public class Practica3Progra {
+public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
