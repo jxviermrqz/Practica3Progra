@@ -30,7 +30,7 @@ public class SuministroEmergencia {
     
     //Metodos
     
-    public void registrarLote(){
+    public void registrarLote(/*Principal p2, y en todas las variables poner p2*/){
         String StringListoParaEnvio = null;
         
         //demas cosas y guardar valores con getText
@@ -48,7 +48,7 @@ public class SuministroEmergencia {
         
     }
     
-    public boolean invertirEstadoEnvio( boolean listoParaEnvio){
+    public boolean alternarEstadoEnvio(){
         this.listoParaEnvio= !this.listoParaEnvio;
         mostrarFichaLogistica();
         return this.listoParaEnvio;
