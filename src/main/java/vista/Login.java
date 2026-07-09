@@ -29,7 +29,6 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,25 +108,26 @@ public class Login extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel2.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("ㅤㅤ");
         jPanel2.add(jLabel4, new java.awt.GridBagConstraints());
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("ㅤㅤ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         jPanel2.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("ㅤㅤ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 5;
         jPanel2.add(jLabel6, gridBagConstraints);
 
-        jLabel7.setText("jLabel7");
-        jPanel2.add(jLabel7, new java.awt.GridBagConstraints());
-
-        jLabel8.setText("jLabel8");
+        jLabel8.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("ㅤㅤ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -197,11 +197,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField txtContraseña;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JPasswordField txtContraseña;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
