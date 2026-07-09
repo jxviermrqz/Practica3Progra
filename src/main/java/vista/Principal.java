@@ -16,27 +16,27 @@ public class Principal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaReporte = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtNombreInsumo = new javax.swing.JTextField();
+        txtIdLote = new javax.swing.JTextField();
+        txtDescripcionUso = new javax.swing.JTextField();
+        txtTipoAyuda = new javax.swing.JTextField();
+        txtPesoKg = new javax.swing.JTextField();
+        txtListoParaEnvio = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnMostrarFichaLote = new javax.swing.JButton();
+        btnRegistrarLote = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        txtCantidadLotes = new javax.swing.JTextField();
+        btnAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,7 +54,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 0.1;
         jPanel2.add(jLabel1, gridBagConstraints);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -62,10 +62,24 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID Lote", "Title 2", "Title 3", "Title 4"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tablaReporte);
+        if (tablaReporte.getColumnModel().getColumnCount() > 0) {
+            tablaReporte.getColumnModel().getColumn(0).setResizable(false);
+            tablaReporte.getColumnModel().getColumn(1).setResizable(false);
+            tablaReporte.getColumnModel().getColumn(2).setResizable(false);
+            tablaReporte.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -94,148 +108,183 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel2, gridBagConstraints);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        txtNombreInsumo.addActionListener(this::txtNombreInsumoActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel3.add(jTextField1, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(txtNombreInsumo, gridBagConstraints);
 
-        jTextField2.setText("jTextField2");
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
+        txtIdLote.addActionListener(this::txtIdLoteActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel3.add(jTextField2, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(txtIdLote, gridBagConstraints);
 
-        jTextField3.setText("jTextField3");
+        txtDescripcionUso.addActionListener(this::txtDescripcionUsoActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 1);
-        jPanel3.add(jTextField3, gridBagConstraints);
+        jPanel3.add(txtDescripcionUso, gridBagConstraints);
 
-        jTextField4.setText("jTextField4");
+        txtTipoAyuda.addActionListener(this::txtTipoAyudaActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel3.add(jTextField4, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(txtTipoAyuda, gridBagConstraints);
 
-        jTextField5.setText("jTextField5");
+        txtPesoKg.addActionListener(this::txtPesoKgActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel3.add(jTextField5, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(txtPesoKg, gridBagConstraints);
 
-        jTextField6.setText("jTextField6");
+        txtListoParaEnvio.addActionListener(this::txtListoParaEnvioActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jTextField6, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(txtListoParaEnvio, gridBagConstraints);
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("ID Lote:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Nombre Insumo:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel4, gridBagConstraints);
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("Tipo de ayuda:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel6, gridBagConstraints);
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setText("Peso (Kg):");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel7, gridBagConstraints);
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setText("Listo para envio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel8, gridBagConstraints);
 
-        jButton1.setText("jButton1");
+        btnMostrarFichaLote.setText("MOSTRAR REGISTRO");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
-        jPanel3.add(jButton1, gridBagConstraints);
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(btnMostrarFichaLote, gridBagConstraints);
 
-        jButton2.setText("jButton2");
+        btnRegistrarLote.setText("REGISTRAR");
+        btnRegistrarLote.addActionListener(this::btnRegistrarLoteActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
-        jPanel3.add(jButton2, gridBagConstraints);
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(btnRegistrarLote, gridBagConstraints);
 
-        jLabel9.setText("jLabel9");
+        jLabel9.setText("Inventario General");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel9, gridBagConstraints);
 
-        jLabel10.setText("jLabel10");
+        jLabel10.setText("Cantidad de lotes esta jornada:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel10, gridBagConstraints);
 
-        jTextField7.setText("jTextField7");
+        txtCantidadLotes.addActionListener(this::txtCantidadLotesActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel3.add(jTextField7, gridBagConstraints);
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(txtCantidadLotes, gridBagConstraints);
 
-        jButton4.setText("jButton4");
+        btnAceptar.setText("ACEPTAR");
+        btnAceptar.addActionListener(this::btnAceptarActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 12;
-        jPanel3.add(jButton4, gridBagConstraints);
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(btnAceptar, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -263,18 +312,46 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void txtNombreInsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreInsumoActionPerformed
+        txtDescripcionUso.requestFocusInWindow();
+    }//GEN-LAST:event_txtNombreInsumoActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void txtIdLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdLoteActionPerformed
+        txtNombreInsumo.requestFocusInWindow();
+    }//GEN-LAST:event_txtIdLoteActionPerformed
+
+    private void txtDescripcionUsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionUsoActionPerformed
+        txtTipoAyuda.requestFocusInWindow();
+    }//GEN-LAST:event_txtDescripcionUsoActionPerformed
+
+    private void txtTipoAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoAyudaActionPerformed
+        txtPesoKg.requestFocusInWindow();
+    }//GEN-LAST:event_txtTipoAyudaActionPerformed
+
+    private void txtPesoKgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesoKgActionPerformed
+        txtListoParaEnvio.requestFocusInWindow();
+    }//GEN-LAST:event_txtPesoKgActionPerformed
+
+    private void txtListoParaEnvioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtListoParaEnvioActionPerformed
+        btnRegistrarLote.requestFocusInWindow();
+    }//GEN-LAST:event_txtListoParaEnvioActionPerformed
+
+    private void btnRegistrarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarLoteActionPerformed
+        btnMostrarFichaLote.requestFocusInWindow();
+    }//GEN-LAST:event_btnRegistrarLoteActionPerformed
+
+    private void txtCantidadLotesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadLotesActionPerformed
+        btnAceptar.requestFocusInWindow();
+    }//GEN-LAST:event_txtCantidadLotesActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        txtIdLote.requestFocusInWindow();
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnMostrarFichaLote;
+    private javax.swing.JButton btnRegistrarLote;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -289,13 +366,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTable tablaReporte;
+    private javax.swing.JTextField txtCantidadLotes;
+    private javax.swing.JTextField txtDescripcionUso;
+    private javax.swing.JTextField txtIdLote;
+    private javax.swing.JTextField txtListoParaEnvio;
+    private javax.swing.JTextField txtNombreInsumo;
+    private javax.swing.JTextField txtPesoKg;
+    private javax.swing.JTextField txtTipoAyuda;
     // End of variables declaration//GEN-END:variables
 }
