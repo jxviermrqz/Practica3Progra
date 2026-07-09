@@ -349,9 +349,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnMostrarFichaLote;
-    private javax.swing.JButton btnRegistrarLote;
+    public javax.swing.JButton btnAceptar;
+    public javax.swing.JButton btnMostrarFichaLote;
+    public javax.swing.JButton btnRegistrarLote;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -366,13 +366,102 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaReporte;
-    private javax.swing.JTextField txtCantidadLotes;
-    private javax.swing.JTextField txtDescripcionUso;
-    private javax.swing.JTextField txtIdLote;
-    private javax.swing.JTextField txtListoParaEnvio;
-    private javax.swing.JTextField txtNombreInsumo;
-    private javax.swing.JTextField txtPesoKg;
-    private javax.swing.JTextField txtTipoAyuda;
+    public javax.swing.JTable tablaReporte;
+    public javax.swing.JTextField txtCantidadLotes;
+    public javax.swing.JTextField txtDescripcionUso;
+    public javax.swing.JTextField txtIdLote;
+    public javax.swing.JTextField txtListoParaEnvio;
+    public javax.swing.JTextField txtNombreInsumo;
+    public javax.swing.JTextField txtPesoKg;
+    public javax.swing.JTextField txtTipoAyuda;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JButton getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public void setBtnAceptar(javax.swing.JButton btnAceptar) {
+        this.btnAceptar = btnAceptar;
+    }
+
+    public javax.swing.JButton getBtnMostrarFichaLote() {
+        return btnMostrarFichaLote;
+    }
+
+    public void setBtnMostrarFichaLote(javax.swing.JButton btnMostrarFichaLote) {
+        this.btnMostrarFichaLote = btnMostrarFichaLote;
+    }
+
+    public javax.swing.JButton getBtnRegistrarLote() {
+        return btnRegistrarLote;
+    }
+
+    public void setBtnRegistrarLote(javax.swing.JButton btnRegistrarLote) {
+        this.btnRegistrarLote = btnRegistrarLote;
+    }
+
+    public javax.swing.JTable getTablaReporte() {
+        return tablaReporte;
+    }
+
+    public void setTablaReporte(javax.swing.JTable tablaReporte) {
+        this.tablaReporte = tablaReporte;
+    }
+
+    public javax.swing.JTextField getTxtCantidadLotes() {
+        return txtCantidadLotes;
+    }
+
+    public void setTxtCantidadLotes(javax.swing.JTextField txtCantidadLotes) {
+        this.txtCantidadLotes = txtCantidadLotes;
+    }
+
+    public javax.swing.JTextField getTxtDescripcionUso() {
+        return txtDescripcionUso;
+    }
+
+    public void setTxtDescripcionUso(javax.swing.JTextField txtDescripcionUso) {
+        this.txtDescripcionUso = txtDescripcionUso;
+    }
+
+    public javax.swing.JTextField getTxtIdLote() {
+        return txtIdLote;
+    }
+
+    public void setTxtIdLote(javax.swing.JTextField txtIdLote) {
+        this.txtIdLote = txtIdLote;
+    }
+
+    public javax.swing.JTextField getTxtListoParaEnvio() {
+        return txtListoParaEnvio;
+    }
+
+    public void setTxtListoParaEnvio(javax.swing.JTextField txtListoParaEnvio) {
+        this.txtListoParaEnvio = txtListoParaEnvio;
+    }
+
+    public javax.swing.JTextField getTxtNombreInsumo() {
+        return txtNombreInsumo;
+    }
+
+    public void setTxtNombreInsumo(javax.swing.JTextField txtNombreInsumo) {
+        this.txtNombreInsumo = txtNombreInsumo;
+    }
+
+    public javax.swing.JTextField getTxtPesoKg() {
+        return txtPesoKg;
+    }
+
+    public void setTxtPesoKg(javax.swing.JTextField txtPesoKg) {
+        this.txtPesoKg = txtPesoKg;
+    }
+
+    public javax.swing.JTextField getTxtTipoAyuda() {
+        return txtTipoAyuda;
+    }
+
+    public void setTxtTipoAyuda(javax.swing.JTextField txtTipoAyuda) {
+        this.txtTipoAyuda = txtTipoAyuda;
+    }
+
 }
