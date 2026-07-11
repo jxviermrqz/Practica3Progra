@@ -9,7 +9,7 @@ import vista.*;
 public class ControladorLogin implements ActionListener{
     
     private final Login vistaLogin;
-
+    
     public ControladorLogin(Login p1) {
         this.vistaLogin = p1;
         this.vistaLogin.getBtnInicio().addActionListener(this);
@@ -26,17 +26,19 @@ public class ControladorLogin implements ActionListener{
     }
 
     private void comprobarUsuario() {
-        String usuario = vistaLogin.getTxtUsuario().getText().trim();
-        String contraseña = vistaLogin.getTxtContraseña().getText().trim();
+        String usuario = "admin";
+        String contraseña = "123";
+        String usuarioIngresado = vistaLogin.getTxtUsuario().getText().trim();
+        String contraseñaIngresada = vistaLogin.getTxtContraseña().getText().trim();
         
-        if (usuario.isEmpty() || contraseña.isEmpty()){
+        if (usuarioIngresado.isEmpty() || contraseñaIngresada.isEmpty()){
             JOptionPane.showMessageDialog(vistaLogin, 
                     "Complete todos los campos.", 
                     "Campos Vacíos", 
                     JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (usuario.equals("admin") && contraseña.equals("123")){
+        if (usuarioIngresado.equals(usuario) && contraseñaIngresada.equals(contraseña)){
             JOptionPane.showMessageDialog(vistaLogin, 
                     "Ingresado con exito", 
                     "Ingreso", 
