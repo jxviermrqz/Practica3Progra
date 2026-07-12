@@ -50,7 +50,6 @@ public class SuministroEmergencia {
             this.pesoKg = 0.0;
         }
 
-        // Llamamos al método para procesar el booleano
         valorBooleano(vistaPrincipal);
         
         DefaultTableModel model = (DefaultTableModel) vistaPrincipal.getTablaReporte().getModel();
@@ -74,7 +73,6 @@ public class SuministroEmergencia {
   
         String estado = this.listoParaEnvio ? "si" : "no";
     
-        // 3. Agregamos la fila con los valores actuales de la clase
         model.addRow(new Object[]{
             this.idLote, 
             this.nombreInsumo, 

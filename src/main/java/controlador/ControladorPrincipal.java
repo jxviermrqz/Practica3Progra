@@ -11,11 +11,11 @@ public class ControladorPrincipal implements ActionListener {
     private final Principal vistaPrincipal;
     
     private SuministroEmergencia[] sectorAlimentos = new SuministroEmergencia[3];
-    private int indiceFijo = 0; 
+    private int i = 0; 
 
     private SuministroEmergencia[] inventarioGeneral;
-    private int tamanoDinamico = 0;
-    private int indiceDinamico = 0;
+    private int tamañoLote = 0;
+    private int indiceLote = 0;
 
     public ControladorPrincipal(Principal vista) {
         this.vistaPrincipal = vista; 
@@ -33,16 +33,15 @@ public class ControladorPrincipal implements ActionListener {
         
         if (e.getSource() == vistaPrincipal.getBtnRegistrarLote()) {
             
-            if (indiceFijo < 3) {
+            if (i < 3) {
                 
-                sectorAlimentos[indiceFijo] = new SuministroEmergencia(); 
+                sectorAlimentos[i] = new SuministroEmergencia(); 
                 
-                sectorAlimentos[indiceFijo].registrarLote(vistaPrincipal);
-                indiceFijo++;
+                sectorAlimentos[i].registrarLote(vistaPrincipal);
+                i++;
                 limpiarCamposFormulario();
                 
-                if (indiceFijo == 3) {
-                    System.out.println("\n--- FICHAS LOGÍSTICAS DEL SECTOR ALIMENTOS (Fijo) ---");
+                if (i == 3) {
                     for (int j = 0; j < sectorAlimentos.length; j++) {
                         sectorAlimentos[j].mostrarFichaLogistica();
                     }
@@ -58,20 +57,19 @@ public class ControladorPrincipal implements ActionListener {
                     return;
                 }
 
-                if (indiceDinamico < tamanoDinamico) {
-                    inventarioGeneral[indiceDinamico] = new SuministroEmergencia();
-                    inventarioGeneral[indiceDinamico].registrarLote(vistaPrincipal);
+                if (indiceLote < tamañoLote) {
+                    inventarioGeneral[indiceLote] = new SuministroEmergencia();
+                    inventarioGeneral[indiceLote].registrarLote(vistaPrincipal);
                     
-                    indiceDinamico++;
+                    indiceLote++;
                     limpiarCamposFormulario();
 
-                    if (indiceDinamico == tamanoDinamico) {
-                        System.out.println("\n--- INVENTARIO GENERAL COMPLETO ---");
+                    if (indiceLote == tamañoLote) {
                         for (int j = 0; j < inventarioGeneral.length; j++) {
                             inventarioGeneral[j].mostrarFichaLogistica();
                         }
                         
-                        String inputIndice = JOptionPane.showInputDialog(vistaPrincipal, "Seleccione un índice del inventario general (0 a " + (tamanoDinamico - 1) + "):");
+                        String inputIndice = JOptionPane.showInputDialog(vistaPrincipal, "Seleccione un índice del inventario general (0 a " + (tamañoLote - 1) + "):");
                         if (inputIndice != null && !inputIndice.isEmpty()) {
                             int idx = Integer.parseInt(inputIndice);
                             if (idx >= 0 && idx < inventarioGeneral.length) {
@@ -81,19 +79,14 @@ public class ControladorPrincipal implements ActionListener {
                     }
                 }
             }
-        }
-        
-        else if (e.getSource() == vistaPrincipal.getBtnAceptar()) {
+        } else if (e.getSource() == vistaPrincipal.getBtnAceptar()) {
             String entradaCantidad = vistaPrincipal.getTxtCantidadLotes().getText().trim();
             if (!entradaCantidad.isEmpty()) {
-                tamanoDinamico = Integer.parseInt(entradaCantidad);
-                inventarioGeneral = new SuministroEmergencia[tamanoDinamico]; 
+                tamañoLote = Integer.parseInt(entradaCantidad);
+                inventarioGeneral = new SuministroEmergencia[tamañoLote]; 
                 JOptionPane.showMessageDialog(vistaPrincipal, "Inventario General configurado. Registre los lotes.");
             }
-        }
-        
-        else if (e.getSource() == vistaPrincipal.getBtnMostrarFichaLote()) {
-            System.out.println("Botón manual presionado.");
+        } else if (e.getSource() == vistaPrincipal.getBtnMostrarFichaLote()) {
         }
     }
 

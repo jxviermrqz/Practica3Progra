@@ -48,6 +48,7 @@ public class ControladorLogin implements ActionListener{
             
             ControladorPrincipal controladorPrincipal = new ControladorPrincipal(p2);
             
+            p2.setExtendedState(JFrame.MAXIMIZED_BOTH);
             p2.setLocationRelativeTo(null);
             p2.setVisible(true);
             p2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

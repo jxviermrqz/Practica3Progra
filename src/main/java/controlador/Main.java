@@ -26,37 +26,26 @@ public class Main {
         
         lotePrioritario.alternarEstadoEnvio(); 
         
-        SuministroEmergencia envioInmediato = new SuministroEmergencia(); // [cite: 36]
+        SuministroEmergencia envioInmediato = new SuministroEmergencia(); 
+        /*
         envioInmediato.setIdLote("ENV002");
         envioInmediato.setNombreInsumo("Mantas Térmicas");
         envioInmediato.setDescripcionUso("Refugio para damnificados");
         envioInmediato.setPesoKg(22.0);
         envioInmediato.setTipoAyuda("Herramientas");
         envioInmediato.setListoParaEnvio(true);
-        
-        // Declara e instancia un objeto pedidoEspecial (constructor paramétrico)
+        */
+
         SuministroEmergencia pedidoEspecial = new SuministroEmergencia(
             "MED004", "Antibióticos", "Uso hospitalario urgente", 8.5, true, "Medicina"
-        ); // [cite: 36]
+        ); 
         
-        // Llama a los métodos de interacción correspondientes
-        envioInmediato.mostrarFichaLogistica(); // [cite: 37]
-        pedidoEspecial.mostrarFichaLogistica(); // [cite: 37]
+        envioInmediato.mostrarFichaLogistica(); 
+        pedidoEspecial.mostrarFichaLogistica(); 
         
-        // Simulación de liberación de memoria: Asigna explícitamente estas variables a null
-        // para romper la referencia en el Stack y permitir que el Garbage Collector libere el Heap
-        envioInmediato = null; // [cite: 38]
-        pedidoEspecial = null; // [cite: 38]
+        envioInmediato = null;
+        pedidoEspecial = null;
         
-        System.out.println(">> [GC] Referencias del Stack rotas de forma explícita (= null).");
-        System.out.println(">> Espacio en el Heap marcado como elegible para el Garbage Collector.\n");
-        System.out.println("=================================================");
-        System.out.println("=== INICIANDO ENTORNO GRÁFICO (S.O.S. TÁCHIRA) ===");
-        System.out.println("=================================================\n");
-
-        // =================================================================
-        // APERTURA DEL ENTORNO GRÁFICO (MVC)
-        // =================================================================
         Login p1 = new Login();
         ControladorLogin controladorLogin = new ControladorLogin(p1);
         
