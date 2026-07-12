@@ -1,4 +1,5 @@
 package modelo;
+import javax.swing.table.DefaultTableModel;
 import vista.*;
 
 public class SuministroEmergencia {
@@ -32,9 +33,33 @@ public class SuministroEmergencia {
     //Metodos
     
     public void registrarLote(Principal vistaPrincipal){
-        String StringListoParaEnvio = null;
+        String tempId = vistaPrincipal.getTxtIdLote().getText().trim().toLowerCase();
+        String tempNombre = vistaPrincipal.getTxtNombreInsumo().getText().trim().toLowerCase();
+        String tempDesc = vistaPrincipal.getTxtDescripcionUso().getText().trim().toLowerCase();
+        String tempTipo = vistaPrincipal.getTxtTipoAyuda().getText().trim().toLowerCase();
+        String tempPeso = vistaPrincipal.getTxtPesoKg().getText().trim();
         
-        //demas cosas y guardar valores con getText
+        this.idLote = tempId;
+        this.nombreInsumo = tempNombre;
+        this.descripcionUso = tempDesc;
+        this.tipoAyuda = tempTipo;
+        
+        try {
+            this.pesoKg = Double.parseDouble(tempPeso);
+        } catch (NumberFormatException e) {
+            this.pesoKg = 0.0;
+        }
+
+        // Llamamos al método para procesar el booleano
+        valorBooleano(vistaPrincipal);
+        
+        DefaultTableModel model = (DefaultTableModel) vistaPrincipal.getTablaReporte().getModel();
+        model.addRow(new Object[]{this.idLote, this.nombreInsumo, this.descripcionUso, this.tipoAyuda, this.pesoKg, (this.listoParaEnvio ? "si" : "no")});
+        
+        
+    }
+    public void valorBooleano(Principal vistaPrincipal){
+        String StringListoParaEnvio = null;
         
         if (StringListoParaEnvio.equalsIgnoreCase("Si")){
             this.listoParaEnvio=true;
@@ -43,15 +68,26 @@ public class SuministroEmergencia {
         }
     }
     
-    public void mostrarFichaLogistica(){
+    public void mostrarFichaLogistica(Principal vistaPrincipal){
         
-        //hacer todo jaja hola 
-        
+       javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) vistaPrincipal.getTablaReporte().getModel();
+  
+        String estado = this.listoParaEnvio ? "si" : "no";
+    
+        // 3. Agregamos la fila con los valores actuales de la clase
+        model.addRow(new Object[]{
+            this.idLote, 
+            this.nombreInsumo, 
+            this.descripcionUso, 
+            this.tipoAyuda, 
+            this.pesoKg, 
+            estado
+        });
     }
     
-    public boolean alternarEstadoEnvio(){
+    public boolean alternarEstadoEnvio(Principal vistaPrincipal){
         this.listoParaEnvio= !this.listoParaEnvio;
-        mostrarFichaLogistica();
+        mostrarFichaLogistica(vistaPrincipal);
         return this.listoParaEnvio;
     }
     
