@@ -1,5 +1,7 @@
 package vista;
 
+import javax.swing.JLabel;
+
 public class Principal extends javax.swing.JFrame {
     
     public Principal() {
@@ -33,8 +35,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         btnMostrarFichaLote = new javax.swing.JButton();
         btnRegistrarLote = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        tituloCantidad = new javax.swing.JLabel();
+        textoCantidad = new javax.swing.JLabel();
         txtCantidadLotes = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -311,9 +313,9 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(btnRegistrarLote, gridBagConstraints);
 
-        jLabel9.setFont(new java.awt.Font("PMingLiU-ExtB", 3, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 255));
-        jLabel9.setText("Inventario General:");
+        tituloCantidad.setFont(new java.awt.Font("PMingLiU-ExtB", 3, 36)); // NOI18N
+        tituloCantidad.setForeground(new java.awt.Color(204, 204, 255));
+        tituloCantidad.setText("Inventario General:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
@@ -322,17 +324,17 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.ipady = 5;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanel3.add(jLabel9, gridBagConstraints);
+        jPanel3.add(tituloCantidad, gridBagConstraints);
 
-        jLabel10.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 255));
-        jLabel10.setText("Cantidad de lotes esta jornada:");
+        textoCantidad.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        textoCantidad.setForeground(new java.awt.Color(204, 204, 255));
+        textoCantidad.setText("Cantidad de lotes esta jornada:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanel3.add(jLabel10, gridBagConstraints);
+        jPanel3.add(textoCantidad, gridBagConstraints);
 
         txtCantidadLotes.setBackground(new java.awt.Color(248, 250, 255));
         txtCantidadLotes.setForeground(new java.awt.Color(0, 0, 0));
@@ -450,7 +452,6 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton btnMostrarFichaLote;
     public javax.swing.JButton btnRegistrarLote;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -462,12 +463,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tablaReporte;
+    private javax.swing.JLabel textoCantidad;
+    private javax.swing.JLabel tituloCantidad;
     public javax.swing.JTextField txtCantidadLotes;
     public javax.swing.JTextField txtDescripcionUso;
     public javax.swing.JTextField txtIdLote;
@@ -565,4 +567,20 @@ public class Principal extends javax.swing.JFrame {
         this.txtTipoAyuda = txtTipoAyuda;
     }
 
+    public JLabel getTextoCantidad() {
+        return textoCantidad;
+    }
+
+    public void setTextoCantidad(JLabel textoCantidad) {
+        this.textoCantidad = textoCantidad;
+    }
+
+    public JLabel getTituloCantidad() {
+        return tituloCantidad;
+    }
+
+    public void setTituloCantidad(JLabel tituloCantidad) {
+        this.tituloCantidad = tituloCantidad;
+    }
+    
 }

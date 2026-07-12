@@ -50,12 +50,7 @@ public class SuministroEmergencia {
             this.pesoKg = 0.0;
         }
 
-        valorBooleano(vistaPrincipal);     
-        
-        DefaultTableModel model = (DefaultTableModel) vistaPrincipal.getTablaReporte().getModel();
-        model.addRow(new Object[]{this.idLote, this.nombreInsumo, this.descripcionUso, this.tipoAyuda, this.pesoKg, (this.listoParaEnvio ? "si" : "no")});
-        
-        
+        valorBooleano(vistaPrincipal); 
     }
     public void valorBooleano(Principal vistaPrincipal){
         String StringListoParaEnvio = vistaPrincipal.getTxtListoParaEnvio().getText().trim();

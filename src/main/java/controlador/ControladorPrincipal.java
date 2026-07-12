@@ -26,6 +26,8 @@ public class ControladorPrincipal implements ActionListener {
         
         this.vistaPrincipal.getTxtCantidadLotes().setVisible(false);
         this.vistaPrincipal.getBtnAceptar().setVisible(false);
+        this.vistaPrincipal.getTextoCantidad().setVisible(false);
+        this.vistaPrincipal.getTituloCantidad().setVisible(false);
     }
 
     @Override
@@ -48,6 +50,8 @@ public class ControladorPrincipal implements ActionListener {
                     
                     this.vistaPrincipal.getTxtCantidadLotes().setVisible(true);
                     this.vistaPrincipal.getBtnAceptar().setVisible(true);
+                    this.vistaPrincipal.getTextoCantidad().setVisible(true);
+                    this.vistaPrincipal.getTituloCantidad().setVisible(true);
                     this.vistaPrincipal.getTxtCantidadLotes().requestFocusInWindow();
                 }
             } 
@@ -63,19 +67,18 @@ public class ControladorPrincipal implements ActionListener {
                     
                     indiceLote++;
                     limpiarCamposFormulario();
-
                     if (indiceLote == tamañoLote) {
                         for (int j = 0; j < inventarioGeneral.length; j++) {
                             inventarioGeneral[j].mostrarFichaLogistica(vistaPrincipal);
                         }
                         
                         String inputIndice = JOptionPane.showInputDialog(vistaPrincipal, "Seleccione un índice del inventario general (0 a " + (tamañoLote - 1) + "):");
-                        if (inputIndice != null && !inputIndice.isEmpty()) {
+                        /*if (inputIndice != null && !inputIndice.isEmpty()) {
                             int idx = Integer.parseInt(inputIndice);
                             if (idx >= 0 && idx < inventarioGeneral.length) {
                                 inventarioGeneral[idx].alternarEstadoEnvio(vistaPrincipal);
                             }
-                        }
+                        }*/
                     }
                 }
             }
