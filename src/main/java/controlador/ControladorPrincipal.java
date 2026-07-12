@@ -3,7 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import vista.Principal;
+import vista.*;
 import modelo.SuministroEmergencia;
 
 public class ControladorPrincipal implements ActionListener {
@@ -43,7 +43,7 @@ public class ControladorPrincipal implements ActionListener {
                 
                 if (i == 3) {
                     for (int j = 0; j < sectorAlimentos.length; j++) {
-                        sectorAlimentos[j].mostrarFichaLogistica();
+                        sectorAlimentos[j].mostrarFichaLogistica(vistaPrincipal);
                     }
                     
                     this.vistaPrincipal.getTxtCantidadLotes().setVisible(true);
@@ -66,14 +66,14 @@ public class ControladorPrincipal implements ActionListener {
 
                     if (indiceLote == tamañoLote) {
                         for (int j = 0; j < inventarioGeneral.length; j++) {
-                            inventarioGeneral[j].mostrarFichaLogistica();
+                            inventarioGeneral[j].mostrarFichaLogistica(vistaPrincipal);
                         }
                         
                         String inputIndice = JOptionPane.showInputDialog(vistaPrincipal, "Seleccione un índice del inventario general (0 a " + (tamañoLote - 1) + "):");
                         if (inputIndice != null && !inputIndice.isEmpty()) {
                             int idx = Integer.parseInt(inputIndice);
                             if (idx >= 0 && idx < inventarioGeneral.length) {
-                                inventarioGeneral[idx].alternarEstadoEnvio();
+                                inventarioGeneral[idx].alternarEstadoEnvio(vistaPrincipal);
                             }
                         }
                     }
