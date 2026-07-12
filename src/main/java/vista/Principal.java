@@ -69,10 +69,7 @@ public class Principal extends javax.swing.JFrame {
         tablaReporte.setBackground(new java.awt.Color(255, 255, 255));
         tablaReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID ", "Nombre", "Descripción", "Tipo", "Peso(Kg)", "Envio"
@@ -287,7 +284,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnMostrarFichaLote.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         btnMostrarFichaLote.setForeground(new java.awt.Color(102, 102, 102));
-        btnMostrarFichaLote.setText("MOSTRAR REGISTRO");
+        btnMostrarFichaLote.setText("ALTERNAR ESTADO ENVIO");
         btnMostrarFichaLote.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;

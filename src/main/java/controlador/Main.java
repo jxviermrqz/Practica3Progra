@@ -7,7 +7,6 @@ import modelo.*;
 public class Main {
 
     public static void main(String[] args) {
-        
         Principal vistaTemporal = new Principal();
         
         SuministroEmergencia reservaInicial = new SuministroEmergencia(); 
@@ -16,7 +15,6 @@ public class Main {
         ); 
         
         SuministroEmergencia donacionReciente = new SuministroEmergencia();
-        
         donacionReciente.setIdLote("DON001");
         donacionReciente.setNombreInsumo("Agua Mineral");
         donacionReciente.setDescripcionUso("Botellas de 1L para consumo inmediato");
@@ -25,18 +23,15 @@ public class Main {
         donacionReciente.setListoParaEnvio(false);
         
         donacionReciente.mostrarFichaLogistica(vistaTemporal);
-        
         lotePrioritario.alternarEstadoEnvio(vistaTemporal); 
         
         SuministroEmergencia envioInmediato = new SuministroEmergencia(); 
-        
         envioInmediato.setIdLote("ENV002");
         envioInmediato.setNombreInsumo("Mantas Térmicas");
         envioInmediato.setDescripcionUso("Refugio para damnificados");
         envioInmediato.setPesoKg(22.0);
         envioInmediato.setTipoAyuda("Herramientas");
         envioInmediato.setListoParaEnvio(true);
-        
 
         SuministroEmergencia pedidoEspecial = new SuministroEmergencia(
             "MED004", "Antibióticos", "Uso hospitalario urgente", 8.5, true, "Medicina"
@@ -49,7 +44,8 @@ public class Main {
         pedidoEspecial = null;
         
         Login p1 = new Login();
-        ControladorLogin controladorLogin = new ControladorLogin(p1);
+        
+        ControladorLogin controladorLogin = new ControladorLogin(p1, vistaTemporal);
         
         p1.setVisible(true);
         p1.setLocationRelativeTo(null);

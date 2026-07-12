@@ -49,7 +49,7 @@ public class SuministroEmergencia {
         } catch (NumberFormatException e) {
             this.pesoKg = 0.0;
         }
-
+        
         valorBooleano(vistaPrincipal); 
     }
     public void valorBooleano(Principal vistaPrincipal){
@@ -79,8 +79,8 @@ public class SuministroEmergencia {
     }
     
     public boolean alternarEstadoEnvio(Principal vistaPrincipal){
-        this.listoParaEnvio= !this.listoParaEnvio;
-        mostrarFichaLogistica(vistaPrincipal);
+        this.listoParaEnvio = !this.listoParaEnvio;
+        mostrarFichaLogistica(vistaPrincipal); 
         return this.listoParaEnvio;
     }
     
@@ -129,7 +129,6 @@ public class SuministroEmergencia {
     public String getTipoAyuda() {
         return tipoAyuda;
     }
-
     public void setTipoAyuda(String tipoAyuda) {
         this.tipoAyuda = tipoAyuda;
     }
