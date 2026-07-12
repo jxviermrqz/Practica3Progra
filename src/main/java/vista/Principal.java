@@ -44,33 +44,40 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setText("Reporte");
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel1.setFont(new java.awt.Font("PMingLiU-ExtB", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel1.setText("Reporte:");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel1, gridBagConstraints);
 
+        tablaReporte.setBackground(new java.awt.Color(255, 255, 255));
         tablaReporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID Lote", "Title 2", "Title 3", "Title 4"
+                "ID ", "Nombre", "Descripción", "Tipo", "Peso(Kg)", "Envio"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -105,78 +112,107 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(6, 12, 6, 6);
         jPanel1.add(jPanel2, gridBagConstraints);
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        jLabel2.setText("Ingresar Lote");
+        jLabel2.setFont(new java.awt.Font("PMingLiU-ExtB", 3, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel2.setText("Ingresar Lote:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel2, gridBagConstraints);
 
+        txtNombreInsumo.setBackground(new java.awt.Color(248, 250, 255));
+        txtNombreInsumo.setForeground(new java.awt.Color(0, 0, 0));
         txtNombreInsumo.addActionListener(this::txtNombreInsumoActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(txtNombreInsumo, gridBagConstraints);
 
+        txtIdLote.setBackground(new java.awt.Color(248, 250, 255));
+        txtIdLote.setForeground(new java.awt.Color(0, 0, 0));
         txtIdLote.addActionListener(this::txtIdLoteActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(txtIdLote, gridBagConstraints);
 
+        txtDescripcionUso.setBackground(new java.awt.Color(248, 250, 255));
+        txtDescripcionUso.setForeground(new java.awt.Color(0, 0, 0));
         txtDescripcionUso.addActionListener(this::txtDescripcionUsoActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 1);
         jPanel3.add(txtDescripcionUso, gridBagConstraints);
 
+        txtTipoAyuda.setBackground(new java.awt.Color(248, 250, 255));
+        txtTipoAyuda.setForeground(new java.awt.Color(0, 0, 0));
         txtTipoAyuda.addActionListener(this::txtTipoAyudaActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(txtTipoAyuda, gridBagConstraints);
 
+        txtPesoKg.setBackground(new java.awt.Color(248, 250, 255));
+        txtPesoKg.setForeground(new java.awt.Color(0, 0, 0));
         txtPesoKg.addActionListener(this::txtPesoKgActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 18;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(txtPesoKg, gridBagConstraints);
 
+        txtListoParaEnvio.setBackground(new java.awt.Color(248, 250, 255));
+        txtListoParaEnvio.setForeground(new java.awt.Color(0, 0, 0));
         txtListoParaEnvio.addActionListener(this::txtListoParaEnvioActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(txtListoParaEnvio, gridBagConstraints);
 
+        jLabel3.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 255));
         jLabel3.setText("ID Lote:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -187,6 +223,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel3, gridBagConstraints);
 
+        jLabel4.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 255));
         jLabel4.setText("Nombre Insumo:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -197,6 +235,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel4, gridBagConstraints);
 
+        jLabel5.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 255));
         jLabel5.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -207,6 +247,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel5, gridBagConstraints);
 
+        jLabel6.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 255));
         jLabel6.setText("Tipo de ayuda:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -217,6 +259,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel6, gridBagConstraints);
 
+        jLabel7.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 255));
         jLabel7.setText("Peso (Kg):");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -227,74 +271,99 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel7, gridBagConstraints);
 
+        jLabel8.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 255));
         jLabel8.setText("Listo para envio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel8, gridBagConstraints);
 
+        btnMostrarFichaLote.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
+        btnMostrarFichaLote.setForeground(new java.awt.Color(102, 102, 102));
         btnMostrarFichaLote.setText("MOSTRAR REGISTRO");
+        btnMostrarFichaLote.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 12;
+        gridBagConstraints.ipady = 12;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(btnMostrarFichaLote, gridBagConstraints);
 
+        btnRegistrarLote.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
+        btnRegistrarLote.setForeground(new java.awt.Color(102, 102, 102));
         btnRegistrarLote.setText("REGISTRAR");
+        btnRegistrarLote.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistrarLote.addActionListener(this::btnRegistrarLoteActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 12;
+        gridBagConstraints.ipady = 12;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(btnRegistrarLote, gridBagConstraints);
 
-        jLabel9.setText("Inventario General");
+        jLabel9.setFont(new java.awt.Font("PMingLiU-ExtB", 3, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel9.setText("Inventario General:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 9;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel9, gridBagConstraints);
 
+        jLabel10.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 255));
         jLabel10.setText("Cantidad de lotes esta jornada:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel10, gridBagConstraints);
 
+        txtCantidadLotes.setBackground(new java.awt.Color(248, 250, 255));
+        txtCantidadLotes.setForeground(new java.awt.Color(0, 0, 0));
         txtCantidadLotes.addActionListener(this::txtCantidadLotesActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(txtCantidadLotes, gridBagConstraints);
 
+        btnAceptar.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        btnAceptar.setForeground(new java.awt.Color(102, 102, 102));
         btnAceptar.setText("ACEPTAR");
+        btnAceptar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAceptar.addActionListener(this::btnAceptarActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.ipadx = 18;
+        gridBagConstraints.ipady = 18;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(btnAceptar, gridBagConstraints);
 
         jLabel11.setText("ㅤㅤ");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         jPanel3.add(jLabel11, gridBagConstraints);
 
@@ -306,22 +375,20 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel13.setText("ㅤㅤ");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 15;
         jPanel3.add(jLabel13, gridBagConstraints);
 
         jLabel14.setText("ㅤㅤ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 15;
         jPanel3.add(jLabel14, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 306;
-        gridBagConstraints.ipady = 524;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -336,7 +403,7 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
         );
 
         pack();
