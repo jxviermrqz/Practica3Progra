@@ -15,12 +15,14 @@ public class Main {
         
         SuministroEmergencia reservaInicial = new SuministroEmergencia();
         SuministroEmergencia lotePrioritario = new SuministroEmergencia(
-                "LOT-001", 
-                "Kits Primeros Auxilios", 
-                "Vendas y alcohol", 
-                5.6, 
-                true, 
-                "Medicina");
+            "LOT-001", 
+            "Kits Primeros Auxilios", 
+            "Vendas y alcohol", 
+            5.6, 
+            true, 
+            "Medicina"
+        );
+        
         SuministroEmergencia donacionReciente = new SuministroEmergencia();
         donacionReciente.registrarLote();
         donacionReciente.mostrarFichaLogistica();
@@ -30,12 +32,12 @@ public class Main {
         SuministroEmergencia envioInmediato = new SuministroEmergencia();
 
         SuministroEmergencia pedidoEspecial = new SuministroEmergencia(
-                "LOT-999", 
-                "Antibióticos de amplio espectro", 
-                "Uso hospitalario urgente", 
-                12.4, 
-                true, 
-                "Medicina"
+            "LOT-002", 
+            "Antibióticos de amplio espectro", 
+            "Uso hospitalario urgente", 
+            12.4, 
+            true, 
+            "Medicina"
         );
         
         envioInmediato.registrarLote();
