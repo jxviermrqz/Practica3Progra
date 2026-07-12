@@ -40,14 +40,18 @@ public class ControladorLogin implements ActionListener{
         }
         if (usuarioIngresado.equals(usuario) && contraseñaIngresada.equals(contraseña)){
             JOptionPane.showMessageDialog(vistaLogin, 
-                    "Ingresado con exito", 
+                    "Ingresado con éxito", 
                     "Ingreso", 
                     JOptionPane.INFORMATION_MESSAGE);
             
             Principal p2 = new Principal();
+            
+            ControladorPrincipal controladorPrincipal = new ControladorPrincipal(p2);
+            
             p2.setLocationRelativeTo(null);
             p2.setVisible(true);
             p2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
             vistaLogin.dispose(); 
         } else {
             JOptionPane.showMessageDialog(vistaLogin, 

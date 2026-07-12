@@ -1,4 +1,5 @@
 package modelo;
+import vista.*;
 
 public class SuministroEmergencia {
     private String idLote;
@@ -30,7 +31,7 @@ public class SuministroEmergencia {
     
     //Metodos
     
-    public void registrarLote(/*Principal p2, y en todas las variables poner p2*/){
+    public void registrarLote(Principal vistaPrincipal){
         String StringListoParaEnvio = null;
         
         //demas cosas y guardar valores con getText
