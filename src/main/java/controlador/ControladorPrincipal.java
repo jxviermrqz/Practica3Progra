@@ -150,6 +150,7 @@ public class ControladorPrincipal implements ActionListener {
             }
             if (ejecutado) {
                 model.setValueAt(nuevoEstadoTexto, filaSeleccionada, 5); 
+                JOptionPane.showMessageDialog(vistaPrincipal, "Estado de envio alternado con exito.");
             }
         }
     }
